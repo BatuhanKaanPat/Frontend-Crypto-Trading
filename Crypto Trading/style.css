@@ -1,0 +1,395 @@
+body {
+    font-family: Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #fdfdfd; 
+}
+
+button {
+    cursor: pointer;
+}
+
+#outerContainer {
+    height: 100vh;
+    margin: 10px 32vh; 
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    background-color: #fafafa; 
+}
+
+#appTitle {
+    font-weight: lighter;
+    padding: 5px 0; 
+    margin: 0;
+    font-size: 22px; 
+    color: #333;
+}
+
+#profileArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh; 
+    position: relative;
+    background-color: #f7f7f7; 
+}
+
+#profileListEmpty {
+    font-size: 50px;
+    user-select: none;
+    color: lightgray;
+}
+
+#triggerNewProfile {
+    position: absolute;
+    bottom: 8vh;
+    left: 20px;
+}
+
+.profileCard {
+    background-color: #dedede; 
+    border: 1px solid #aaa;    
+    border-radius: 10px;
+    padding: 12px 45px;       
+    position: relative;
+    margin: 0 25px;            
+}
+.profileCard:hover {
+    background-color: #bdbdbd; 
+}
+.profile-icon {
+    font-size: 40px;
+    color: #444;               
+}
+
+.btnDeleteProfile {
+    border-radius: 100%;
+    color: white;
+    background-color: #0077cc; 
+    border: none;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.btnDeleteProfile:hover {
+    width: 26px;
+    height: 26px;
+    top: 2px;
+    right: 2px;
+}
+.profileCard p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+    color: #444;
+}
+
+#createProfileOverlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
+#createProfileForm {
+    background: #e0e0e0;
+    padding: 10px;
+    width: 220px;
+    left: 42%;
+    position: relative;
+    top: 10%;
+    border-radius: 8px;
+}
+#createProfileForm p {
+    margin: 4px;
+    padding: 3px;
+    font-size: 18px;
+}
+#createProfileForm input {
+    margin: 4px;
+    padding: 3px;
+    border: 2px solid #333;
+}
+#createProfileForm button {
+    margin: 4px;
+    padding: 3px;
+    width: 60px; 
+    background-color: #0077cc; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+#gameTop {
+    text-align: center;
+    padding-top: 10px;
+}
+#gameTop h2 {
+    margin: 0;
+    color: #333;
+}
+#gameTop p {
+    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    color: #666;
+}
+#gameTop button {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 5px 13px;
+    cursor: pointer;
+}
+
+#marketSection {
+    border: 1px solid #ddd;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #fefefe; 
+}
+#marketCurrencies {
+    display: flex;
+    justify-content: center;
+}
+#marketCurrencies img {
+    max-width: 25px;
+    margin: 8px;
+    cursor: pointer;
+}
+#chosenCurrency {
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+#chosenCurrency img {
+    max-width: 20px;
+    max-height: 20px;
+}
+#chosenCurrency h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
+    margin-left: 15px;
+    margin-right: 30px;
+    color: #333;
+}
+#chosenCurrency p {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: red;
+}
+
+#headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#playerBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; 
+    border-top: 1px solid #ccc;
+    padding: 5px;
+}
+#playerBar p {
+    margin: 5px;
+    padding: 0;
+    line-height: 1;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+#playerBar i.profile-icon {
+    font-size: 16px;
+    margin-right: 5px;
+}
+#playerBar button {
+    margin: 5px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 5px 13px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+#playerBar button i {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+#priceChart {
+    height: 200px;
+    position: relative;
+    margin: 10px;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.stick {
+    border: 1px solid #444;
+    width: 0;
+    position: absolute;
+}
+.chartBar {
+    position: absolute;
+    border: 1px solid #333;
+    z-index: 1;
+}
+.label {
+    position: absolute;
+    font-size: 12px;
+    background-color: white;
+    padding: 2px 4px;
+    border: 0;
+    border-radius: 3px;
+}
+.maxLabel {
+    top: -8px;
+    right: 0;
+    color: #111;
+}
+.minLabel {
+    bottom: -8px;
+    right: 0;
+    color: #111;
+}
+.closePrice {
+    right: 0px;
+    z-index: 2;
+    background-color: rgba(0, 0, 255, 0);
+    color: gray;
+}
+.dottedLine {
+    position: absolute;
+    border-top: 1px dotted gray;
+    width: 100%;
+    left: 0;
+    z-index: 0;
+}
+
+.pulseEffect {
+    animation: pulseFrames 1s infinite;
+}
+@keyframes pulseFrames {
+    0%, 100% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+#overallBalance {
+    margin: 0;
+    margin-top: 5px;
+    text-align: center;
+    padding: 0;
+    color: #444;
+}
+
+#tradeContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#tradeControl {
+    margin-left: 10px;
+    width: 25%;
+}
+#tradeControl h4 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    color: #444;
+}
+#tradeControl > div {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #888;
+    margin-bottom: 5px;
+    background-color: #f7f7f7;
+}
+#tradeControl > div > button {
+    width: 50%;
+    background-color: transparent;
+    color: #555;
+    padding: 5px;
+    border: 0;
+}
+.selected-button {
+    background-color: green !important;
+    border-radius: 5px !important;
+    color: white !important;
+}
+#tradeQuantity {
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 4px;
+    color: #333;
+}
+#btnExecuteTrade {
+    width: 100%;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+    border: 1px solid #666;
+}
+
+#walletContainer {
+    width: 65%;
+    margin-right: 10px;
+}
+#walletContainer h4 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    color: #444;
+}
+#walletTable {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+#walletHeader {
+    background-color: #9999ff;
+}
+#walletHeader th {
+    width: 25%;
+    color: white;
+    text-align: left;
+    padding: 3px;
+}
+#walletTable td {
+    line-height: 1;
+    padding: 3px;
+    vertical-align: middle;
+}
+#walletTable td img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#walletCash {
+    background-color: lightgreen;
+}
+
+
